@@ -325,6 +325,16 @@ Skills
 .certificates_detail div ul {
   padding-inline-start: 20px;
 }
+.certificates_detail div ul li a {
+  color: black;
+
+  text-decoration-line: underline;
+}
+.certificates_detail div ul li a:hover {
+  color: red;
+  text-decoration-style: dashed;
+  transition: 0.2s;
+}
 .certificates_detail img {
   width: 60%;
   margin: auto;
@@ -413,6 +423,7 @@ Skills
     display: block;
     transform: translateX(100%);
     transition: 0.2s ease-in-out;
+    overflow: hidden;
   }
   .navigation_tabs li a {
     display: flex;
@@ -425,6 +436,7 @@ Skills
   .navigation svg {
     display: block;
     width: 30px;
+    cursor: pointer;
   }
   .navigation-active {
     transform: translateX(0%);
@@ -432,6 +444,7 @@ Skills
   .navigation_tabs li:hover {
     color: white;
     background-color: #63ad0f;
+    font-size: 1.5em;
     transform: scale(1.2);
     transition-duration: 0.2;
   }

@@ -43,3 +43,8 @@ const navTabs = document.querySelector(".navigation_tabs");
 barIcon.addEventListener("click", () => {
   navTabs.classList.toggle("navigation-active");
 });
+document.onclick = (e) => {
+  if (e.target.classList.value != "navigation_icon") {
+    navTabs.classList.remove("navigation-active");
+  }
+};
