@@ -1,0 +1,444 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+  font-family: "Kalam", cursive;
+}
+body {
+  background-color: #d9afd9;
+  background-image: linear-gradient(
+    0deg,
+    #d9afd9 0%,
+    #d9c3af 33%,
+    #b0d9af 66%,
+    #97d9e1 100%
+  );
+}
+:root {
+  --textbackgroundcolor: rgb(32, 154, 170);
+}
+.navigation_name {
+  cursor: pointer;
+}
+.navigation {
+  z-index: 10;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(214, 145, 145);
+  backdrop-filter: blur(2px);
+}
+.navigation_tabs {
+  display: flex;
+  align-items: flex-end;
+}
+.navigation_tabs li {
+  list-style: none;
+  margin: auto 10px;
+}
+.navigation_tabs li a {
+  text-decoration: none;
+  color: black;
+}
+.navigation_tabs li a:hover {
+  color: whitesmoke;
+  transition: 0.3s;
+}
+header {
+  display: block;
+  padding-top: 60px;
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/picture/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.intro {
+  position: absolute;
+  font-size: 1.6em;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+.intro hr {
+  margin: 10px auto 10px auto;
+}
+/* 
+Scroll button section 
+*/
+a#scroll-btn {
+  position: absolute;
+  top: 90vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  height: 4em;
+  width: 2em;
+  border: 0.3em solid black;
+  border-radius: 2em;
+}
+a#scroll-btn::before {
+  position: absolute;
+  content: "";
+  margin: auto;
+
+  left: -0;
+  right: 0;
+  height: 1.2em;
+  width: 1.2em;
+  background-color: black;
+  border-radius: 50%;
+  animation: move-down 2s infinite;
+}
+a#scroll-btn::after {
+  content: "Scroll Down";
+  white-space: nowrap;
+  text-decoration: underline;
+  font-weight: bold;
+  display: flex;
+  font-size: larger;
+  position: absolute;
+  left: -1.9em;
+  right: 0;
+  bottom: -2em;
+  width: auto;
+  color: black;
+}
+@keyframes move-down {
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(2em);
+    opacity: 0;
+  }
+}
+
+/*  
+ Profiles section
+*/
+#profiles {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-top: 70px;
+}
+.profile_name {
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+.profile_name hr {
+  margin: 10px;
+}
+.profile_image {
+  width: 50%;
+  display: block;
+  margin: auto;
+  align-items: center;
+}
+section {
+  padding-top: 50px;
+}
+section h1 {
+  align-items: center;
+  text-align: center;
+  font-family: "Charm", cursive;
+  font-size: 3em;
+}
+section hr {
+  margin: 20px 40px;
+}
+/* 
+Skills 
+*/
+.Skills div {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  margin: 10px 10px 20px 10px;
+}
+.Skills h3 {
+  text-align: middle;
+  margin: auto 10px auto;
+  position: relative;
+}
+.Skills div ul {
+  list-style: none;
+  padding-inline-start: 0px;
+}
+.Skills ul li {
+  word-wrap: nowrap;
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: bisque;
+  border-radius: 50px;
+}
+.Skills ul li:hover {
+  background-color: rgb(29, 29, 43);
+  color: bisque;
+  transition: 0.2s;
+}
+
+/*  
+ Experience section
+*/
+.experience_detail {
+  margin: auto 150px;
+  padding: 10px;
+}
+.experience_detail--title:hover {
+  background-color: var(--textbackgroundcolor);
+  color: black;
+  transition: 0.7s;
+}
+.experience_detail--title {
+  display: flex;
+  width: 100%;
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: 2px inset black;
+  cursor: pointer;
+}
+.experience_detail--date {
+  display: flex;
+  float: right;
+  text-align: right;
+  align-items: center;
+}
+.experience_detail--title::after {
+  content: "+";
+  font-size: 20px;
+  padding: 9px;
+  color: yellowgreen;
+  margin: auto 1px auto 1px;
+}
+.active::after {
+  content: "-";
+  color: red;
+  transform: translateY(-2px);
+}
+.experience_detail--name {
+  margin-right: auto;
+}
+.experience_detail--description {
+  position: relative;
+  max-height: 0px;
+  overflow: hidden;
+  transition: 0.8s ease max-height;
+}
+.experience_detail--description div {
+  padding: 10px 20px;
+  margin: auto 25px;
+  display: grid;
+  padding-inline-start: 0px;
+  grid-template-columns: 65% 35%;
+  grid-template-rows: 100%;
+  background-color: rgba(114, 163, 22, 0.705);
+  color: black;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 2px inset black;
+  transform: translateY(-1%);
+}
+.experience_detail--description div ul {
+  height: max-content;
+}
+.experience_detail--description div ul::before {
+  content: "Job Descriptions";
+  font-weight: bold;
+  font-size: 24px;
+}
+.experience_detail--description img {
+  width: 40vh;
+  height: 20vh;
+  margin: auto;
+  border: 2px solid blue;
+  border-radius: 20px;
+}
+/*  
+ Contact me section
+*/
+#contactMe {
+  display: flex;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+
+  background-image: linear-gradient(to top, rgb(214, 241, 90), #d9afd9);
+}
+#contactMe h1 {
+  padding: 10px;
+  border-right: 1px dashed black;
+}
+.contactMe_links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: auto 1px auto 1px;
+  padding-inline-start: 10px;
+}
+.contactMe_links li {
+  list-style: none;
+}
+.contactMe_links li a {
+  text-decoration: none;
+  color: black;
+  display: inline-flex;
+  margin: auto 5px auto 5px;
+}
+.contactMe_links li a img {
+  width: 30px;
+  border-radius: 10px;
+  margin: 6px;
+  box-sizing: content-box;
+}
+.contactMe_links li a img:hover {
+  box-shadow: 0px 0px 3px 3px green;
+  transition: 0.3s;
+}
+.contactMe_links li a:hover {
+  text-decoration: underline;
+  color: red;
+  transition: 0.3s;
+}
+.contactMe_links li a h4 {
+  text-align: center;
+  margin: auto;
+}
+/*  
+ Certificates section
+*/
+.certificates_detail {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 50% 50%;
+  padding: 10px;
+}
+.certificates_detail div {
+  margin-left: 10%;
+}
+.certificates_detail div ul {
+  padding-inline-start: 20px;
+}
+.certificates_detail img {
+  width: 60%;
+  margin: auto;
+  padding: 10px;
+  box-sizing: content-box;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 8px #63ad0f;
+}
+/*  
+ Projects section
+*/
+.projects_lists {
+  text-align: center;
+}
+.projects_demo {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 10px;
+  background-color: var(--textbackgroundcolor);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.projects_demo:hover {
+  background-color: black;
+  color: whitesmoke;
+  transition: 0.5s;
+}
+.projects_demo:hover img {
+  transform: scale(1.2);
+  opacity: 0.2;
+}
+.ui-cards {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  color: whitesmoke;
+}
+.projects_demo:hover .ui-cards {
+  opacity: 1;
+}
+.projects_image {
+  overflow: hidden;
+}
+.projects_image img {
+  width: 260px;
+  height: 270px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.projects_demo h5 {
+  text-align: center;
+}
+.navigation svg {
+  display: none;
+}
+/* Web Responsive */
+@media (max-width: 1040px) {
+  .experience_detail {
+    margin: auto;
+  }
+}
+@media (max-width: 730px) {
+  .experience_detail--description img {
+    width: 30vh;
+    height: 15vh;
+  }
+  .navigation_tabs {
+    position: absolute;
+    right: 0;
+    top: 59px;
+    width: 30vw;
+    height: 80vh;
+    background-color: rgb(201, 77, 77);
+    /* display: flex;
+    align-items: center;
+    
+    text-align: center;
+    justify-content: center;
+    flex-direction: column; */
+    /* align-items: center; */
+    padding-inline-start: 0;
+    display: block;
+    transform: translateX(100%);
+    transition: 0.2s ease-in-out;
+  }
+  .navigation_tabs li a {
+    display: flex;
+    height: calc(80vh / 6);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+  }
+  .navigation svg {
+    display: block;
+    width: 30px;
+  }
+  .navigation-active {
+    transform: translateX(0%);
+  }
+  .navigation_tabs li:hover {
+    color: white;
+    background-color: #63ad0f;
+    transform: scale(1.2);
+    transition-duration: 0.2;
+  }
+}
+@media (max-width: 560px) {
+  .experience_detail--description img {
+    width: 20vh;
+    height: 10vh;
+  }
+}
